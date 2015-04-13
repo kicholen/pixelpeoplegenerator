@@ -15,7 +15,7 @@ class BottomModel
 		
 	}
 	
-	public function randomize(sex:Sex):Void {
+	public function randomize():Void {
 		_bootsColor = Utils.getRandomColor();
 		_clothColor = Utils.getRandomColor();
 		_isShort = Math.random() > 0.9;

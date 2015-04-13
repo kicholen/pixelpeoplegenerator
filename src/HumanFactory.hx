@@ -38,15 +38,32 @@ class HumanFactory
 		drawBottom(bitmapData);
 		drawTop(bitmapData);
 		
-		bitmapData.setPixel(0, 0, _model.bottom.getBootsColor());
-		
 		bitmapData.unlock();
 		
 		return bitmapData;
 	}
 	
 	private function drawTop(bitmapData:BitmapData) {
+		if (!_model.top.isShort()) {
+			bitmapData.setPixel(1, 7, _model.top.getClothColor());
+		}
+		bitmapData.setPixel(1, 5, _model.top.getClothColor());
+		bitmapData.setPixel(2, 5, _model.top.getClothColor());
+		bitmapData.setPixel(3, 5, _model.top.getClothColor());
+		bitmapData.setPixel(4, 5, _model.top.getClothColor());
 		
+		bitmapData.setPixel(1, 6, _model.top.getClothColor());
+		bitmapData.setPixel(2, 6, _model.top.getClothColor());
+		bitmapData.setPixel(3, 6, _model.top.getClothColor());
+		bitmapData.setPixel(4, 6, _model.top.getClothColor());
+		
+		bitmapData.setPixel(2, 7, _model.top.getClothColor());
+		bitmapData.setPixel(3, 7, _model.top.getClothColor());
+		bitmapData.setPixel(4, 7, _model.top.getClothColor());
+		
+		bitmapData.setPixel(2, 8, _model.top.getClothColor());
+		bitmapData.setPixel(3, 8, _model.top.getClothColor());
+		bitmapData.setPixel(4, 8, _model.top.getClothColor());
 	}
 	
 	private function drawBottom(bitmapData:BitmapData) {

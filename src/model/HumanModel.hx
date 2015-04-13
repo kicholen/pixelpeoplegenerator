@@ -20,13 +20,15 @@ class HumanModel
 	public function new() {
 		head = new HeadModel();
 		bottom = new BottomModel();
+		top = new TopModel();
 	}
 	
 	public function randomize():Void {
 		_skinColor = Utils.getRandomColor();
 		_sex = Math.random() > 0.5 ? Sex.Female : Sex.Male;
 		head.randomize();
-		bottom.randomize(_sex);
+		bottom.randomize();
+		top.randomize();
 	}
 	
 	public function getSkinColor():UInt {
