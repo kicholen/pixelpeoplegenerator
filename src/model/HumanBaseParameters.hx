@@ -6,6 +6,6 @@ package model;
  */
 class HumanBaseParameters
 {
-	public static var WIDTH = 6;
+	public static var WIDTH = 7;
 	public static var HEIGHT = 12;
 }

@@ -34,7 +34,7 @@ class Main extends Sprite
 	
 	private var _savedBitmaps:Array<Bitmap>;
 	
-	public static var HUMAN_PER_VIEW:Int = 30;
+	public static var HUMAN_PER_VIEW:Int = 33;
 	
 	public function new() {
 		super();
@@ -60,8 +60,14 @@ class Main extends Sprite
 		var saveButton:SimpleButton = createButton("save");
 		saveButton.addEventListener(TouchEvent.TOUCH_TAP, onSaveTapped);
 		saveButton.addEventListener(MouseEvent.CLICK, onSaveTapped);
-		saveButton.x = createHumansButton.width + 10;
+		saveButton.x = createHumansButton.width + createHumansButton.x + 10;
 		addChild(saveButton);
+		
+		var crazyModeButton:SimpleButton = createButton("crazy");
+		crazyModeButton.addEventListener(TouchEvent.TOUCH_TAP, onCrazyTapped);
+		crazyModeButton.addEventListener(MouseEvent.CLICK, onCrazyTapped);
+		crazyModeButton.x = saveButton.width + saveButton.x + 10;
+		addChild(crazyModeButton);
 	}
 	
 	private function createButton(name:String):SimpleButton {
@@ -98,6 +104,10 @@ class Main extends Sprite
 	
 	private function onCreateHumansTapped(e:Event):Void {
 		createHumans();
+	}
+	
+	private function onCrazyTapped(e:Event):Void {
+		_humanFactory.changeMode();
 	}
 	
 	private function onSpriteTapped(e:Event):Void {
